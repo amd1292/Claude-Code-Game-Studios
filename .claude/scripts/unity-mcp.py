@@ -15,7 +15,7 @@ usage: python .claude/scripts/unity-mcp.py <step> [<step> ...]
 Steps run in order and stop at the first failure. Every step only compiles, runs, reads or
 captures, so a project can allow the script without a prompt; for anything else, call the
 MCP tools directly. Exit codes: 0 ok, 1 a step failed, 2 bad usage, 3 the editor or its
-MCP server could not be reached.
+MCP server could not be reached, 4 not assessed (a test run found no tests: that is not a pass).
 
 The server must use the HTTP transport. Its URL is $UNITY_MCP_URL, default
 http://127.0.0.1:8080/mcp (MCP for Unity's default). The test runner's batch mode
@@ -154,6 +154,9 @@ def step_test(mode):
                 ('  error: %s' % data['error']) if data.get('error') else ''))
             for r in [r for r in result.get('results') or [] if r.get('state') != 'Skipped'][:20]:
                 print('  FAIL %s: %s' % (r.get('fullName') or r.get('name'), (r.get('message') or '').strip()[:240]))
+            if status == 'succeeded' and not summary.get('total'):
+                print('test %s: NOT ASSESSED, no tests ran' % mode)
+                return None
             return status == 'succeeded' and not summary.get('failed')
         time.sleep(2)
     print('test %s: no result after 30 min' % mode)
@@ -241,6 +244,8 @@ def main(argv):
         else:
             print('unknown step: %s (see --help)' % step)
             return 2
+        if good is None:
+            return 4
         if not good:
             return 1
     return 0
