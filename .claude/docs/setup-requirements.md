@@ -21,6 +21,7 @@ says so).
 | Tool | Used By | Purpose | Install |
 | ---- | ---- | ---- | ---- |
 | **jq** | Hooks (8 of 12) | JSON parsing in commit/push/asset/agent hooks | See below |
+| **MCP for Unity** | Unity row of the engine table, `run-and-observe.md` | Compile, test, play and capture in the open editor | See [MCP Servers](mcp-servers.md) |
 
 ### Installing jq
 

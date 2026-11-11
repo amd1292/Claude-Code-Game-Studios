@@ -12,6 +12,14 @@ own copy of each engine's folders.
 | `asset_root` | Where the assets live | `asset-scan.sh`, `content-count.sh` |
 | `run`, `build`, `test`, `smoke` | The default commands. `-` where the command needs something only `/setup-engine` can ask for (the editor's path, a build target) | `test-run.sh` (`test`, when `commands.test` is unset) |
 
+Unity's `run`, `test` and `smoke` go through `.claude/scripts/unity-mcp.py`, which drives
+the open editor through the [MCP for Unity](https://github.com/CoplayDev/unity-mcp) server
+on its HTTP transport (`$UNITY_MCP_URL`, default `http://127.0.0.1:8080/mcp`). They need the
+editor open with that package installed, and they exit 3 with a one-line reason when it is
+not reachable. The batch-mode test runner cannot open a project the editor already has open,
+so for a project that is open this is the only test route; `test-run.sh` keeps the batch-mode
+command for CI. `build` stays `-`: a build needs the project's own target and scenes.
+
 Skills read a row with `resolve_config --keys engine_row`. The files listed above
 read the table through one reader, `.claude/scripts/engine-row.awk`.
 `test-scaffold.sh` does not read it: it writes its own copy of each engine's test

@@ -53,7 +53,7 @@ engine has a native way.
 | `engine.name` | Launch | Capture | Output lands in | Never use | Scaffold needed |
 |---|---|---|---|---|---|
 | Godot 4 | `godot --path . --windowed --resolution 1280x720 <scene>.tscn` | `--write-movie <path>.png --quit-after <N>` | beside the given path, `<name>00000000.png` … | `--headless` | **none** |
-| Unity 6 | built player `.exe -screen-width 1280 -screen-height 720 -screen-fullscreen 0 --scene <Name>` | `ScreenCapture.CaptureScreenshot(<abs path>)` from a bootstrap script | the absolute path you pass | `-batchmode`, `-nographics` | one MonoBehaviour |
+| Unity 6 | built player `.exe -screen-width 1280 -screen-height 720 -screen-fullscreen 0 --scene <Name>`, or the open editor through MCP (below) | `ScreenCapture.CaptureScreenshot(<abs path>)` from a bootstrap script | the absolute path you pass | `-batchmode`, `-nographics` | one MonoBehaviour |
 | Unreal 5 | `MSYS_NO_PATHCONV=1 "<UE root>/Engine/Binaries/Win64/UnrealEditor.exe" "$(pwd -W 2>/dev/null || pwd)/<Game>.uproject" <MapURL> -game -windowed -ResX=1280 -ResY=720` | `HighResShot 1280x720 filename=<abs path>` console command | the path you pass (else `Saved/Screenshots/WindowsEditor/`) | `-nullrhi`, `-unattended` alone | one actor or `-ExecCmds` |
 | Web (a browser game) | `bash .claude/scripts/page-shot.sh <page>.html <path>.png --query <state>`; a web project's page is `dist-single/index.html`, after `npm run build:single` | the same command: headless Chrome, Edge or Chromium | the path you pass | `commands.run` (a dev server) | **none** |
 
@@ -170,6 +170,22 @@ Pass an **absolute** path — the relative base differs between editor and
 player. `--scene` must be in the build settings. Building the player first
 costs 1–3 minutes on a small project; that is the price of looking at the thing
 you ship rather than the editor.
+
+**The open editor, through MCP.** When the project is open in the editor with
+[MCP for Unity](https://github.com/CoplayDev/unity-mcp) installed, the same look
+takes seconds and needs no build or bootstrap script:
+
+```
+python .claude/scripts/unity-mcp.py compile play 5 shot C:/abs/production/qa/evidence/<slug>/01-shop.png stop
+```
+
+`compile` fails on any CS error, `play 5` runs five seconds of real frames, and
+`shot` writes the Game view (Screen Space Overlay UI included) to the absolute
+path. Open the scene the story touched first, or reach the state with a debug
+hook as below. Feed the path to `Read` as with any other capture. An editor play
+session is not the shipped player, so a story whose risk is in the build
+(stripping, platform defines, scenes missing from the build list) still takes the
+player route; say which one the evidence came from. `--help` lists the other steps.
 
 ### Unreal 5 — one actor, or `-ExecCmds`
 
