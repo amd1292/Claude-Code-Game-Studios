@@ -1,7 +1,7 @@
 ---
 name: gameplay-programmer
 description: "Implements designed mechanics as code — player systems, combat, interactive features, gameplay system code."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: inherit
 maxTurns: 20
 ---

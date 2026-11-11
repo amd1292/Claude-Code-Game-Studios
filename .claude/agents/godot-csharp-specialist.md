@@ -1,7 +1,7 @@
 ---
 name: godot-csharp-specialist
 description: "Godot 4 C# quality — .NET patterns, attribute-based exports, signal delegates, async patterns, type-safe node access."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

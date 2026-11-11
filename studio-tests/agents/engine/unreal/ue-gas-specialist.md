@@ -10,7 +10,7 @@
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, Bash — no `Agent` tool
+- [ ] `tools:` is unset, so the agent inherits the session's tools, the MCP servers included, and `disallowedTools:` lists `Agent`
 - [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
 - [ ] Agent definition does not claim authority over UI implementation or low-level net serialization
 

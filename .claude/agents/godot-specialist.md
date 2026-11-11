@@ -1,7 +1,6 @@
 ---
 name: godot-specialist
 description: "Authority on Godot-specific patterns and APIs — node/scene architecture, signals, resources; guides GDScript vs C# vs GDExtension."
-tools: Read, Glob, Grep, Write, Edit, Bash, Agent
 model: inherit
 maxTurns: 20
 ---

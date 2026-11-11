@@ -1,7 +1,7 @@
 ---
 name: tools-programmer
 description: "Internal dev tools — editor extensions, content authoring tools, debug utilities, pipeline automation, editor workflow."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: inherit
 maxTurns: 20
 ---

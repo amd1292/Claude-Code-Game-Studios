@@ -1,7 +1,7 @@
 ---
 name: ue-replication-specialist
 description: "Unreal networking — property replication, RPCs, client prediction, relevancy, net serialization, bandwidth. Server-authoritative architecture."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

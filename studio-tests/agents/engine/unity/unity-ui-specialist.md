@@ -10,7 +10,7 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references UI Toolkit / UGUI / Canvas / data binding)
-- [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
+- [ ] `tools:` is unset, so the agent inherits the session's tools, the MCP servers included, and `disallowedTools:` lists `Agent`
 - [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
 - [ ] Agent definition does not claim authority over UX flow design or visual art direction
 

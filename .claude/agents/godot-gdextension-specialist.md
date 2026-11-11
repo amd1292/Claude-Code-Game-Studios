@@ -1,7 +1,7 @@
 ---
 name: godot-gdextension-specialist
 description: "Native code integration with Godot — GDExtension API, godot-cpp and godot-rust bindings, custom node types, the native boundary."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

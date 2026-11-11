@@ -1,7 +1,7 @@
 ---
 name: unity-shader-specialist
 description: "Unity rendering — Shader Graph, custom HLSL, VFX Graph, render pipeline customization (URP/HDRP), post-processing within performance budgets."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

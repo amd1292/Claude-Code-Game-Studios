@@ -1,7 +1,7 @@
 ---
 name: unity-dots-specialist
 description: "Unity Data-Oriented Technology Stack — Entity Component System, Jobs, Burst compiler optimization, hybrid renderer, correct ECS patterns."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

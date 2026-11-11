@@ -10,7 +10,7 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references rendering / memory / engine core)
-- [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
+- [ ] `tools:` is unset, so the agent inherits the session's tools, the MCP servers included, and `disallowedTools:` lists `Agent`
 - [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
 - [ ] Agent definition does not claim authority over gameplay mechanics or tool UI
 

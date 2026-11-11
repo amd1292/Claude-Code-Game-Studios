@@ -10,7 +10,7 @@
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references throwaway builds / concept prototypes / speed over standards)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, Bash (it writes and runs throwaway builds) and `isolation:` reads `worktree` — frontmatter cannot scope writes to a directory, so the boundary to `prototypes/` is the body's Isolation Requirements (next assertion)
+- [ ] `tools:` is unset, so the agent inherits the session's tools, the MCP servers included; `disallowedTools:` lists `Agent` (it writes and runs throwaway builds) and `isolation:` reads `worktree` — frontmatter cannot scope writes to a directory, so the boundary to `prototypes/` is the body's Isolation Requirements (next assertion)
 - [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
 - [ ] Agent definition explicitly states that prototype code is not production code and must not be copied into the production code root
 

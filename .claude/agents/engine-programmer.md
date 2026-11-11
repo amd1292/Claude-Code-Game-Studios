@@ -1,7 +1,7 @@
 ---
 name: engine-programmer
 description: "Core engine systems — rendering pipeline, physics, memory, resource loading, scene management, performance-critical framework code."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: inherit
 maxTurns: 20
 ---

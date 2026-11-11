@@ -1,7 +1,7 @@
 ---
 name: godot-gdscript-specialist
 description: "GDScript code quality — static typing enforcement, signal architecture, coroutine patterns, GDScript idioms, typed and performant."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

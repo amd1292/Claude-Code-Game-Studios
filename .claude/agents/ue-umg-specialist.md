@@ -1,7 +1,7 @@
 ---
 name: ue-umg-specialist
 description: "Unreal UI implementation — UMG widget hierarchy, data binding, CommonUI input routing, widget styling, UI optimization."
-tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: Agent
 model: sonnet
 maxTurns: 20
 ---

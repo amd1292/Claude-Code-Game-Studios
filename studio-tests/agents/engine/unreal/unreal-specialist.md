@@ -10,7 +10,7 @@
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Unreal Engine)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, Bash and `Agent`, and its body tells it to start only its four sub-specialists (ue-gas, ue-blueprint, ue-replication, ue-umg), since a type list in a subagent's `tools` is ignored
+- [ ] `tools:` is unset, so the agent inherits the session's tools, the MCP servers included, `Agent` among them, and its body tells it to start only its four sub-specialists (ue-gas, ue-blueprint, ue-replication, ue-umg), since a type list in a subagent's `tools` is ignored
 - [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
 - [ ] Agent definition does not claim authority outside its declared domain (no art, no server infra)
 
